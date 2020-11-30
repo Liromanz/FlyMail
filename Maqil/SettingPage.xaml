@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="Maqil.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Maqil"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Opacity="0.8">
+
+    <Grid Margin="50,50,50,50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Настройки почты" Grid.Row="0" FontSize="40" TextDecorations="Underline" HorizontalAlignment="Center"/>
+        <NavigationViewItemSeparator Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Изменить фон: " FontSize="14" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            <TextBlock x:Name="backgroundNametextBox"  Grid.Column="1" VerticalAlignment="Center" Margin="20,0,20,0"/>
+            <Button Grid.Column="2" Content="Изменить" Margin="20,0,20,0" Click="Button_Click_2"/>
+        </Grid>
+        <Grid Grid.Row="3" Margin="0,20,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Добавить пользователя: " FontSize="14" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            <ComboBox x:Name="usersNumDropDown" Grid.Column="1" VerticalAlignment="Stretch" Margin="20,0,20,0" SelectionChanged="usersNumDropDown_SelectionChanged"/>
+            <Button Grid.Column="2" Content="Логин" MinWidth="83" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Button_Click_1"/>
+        </Grid>
+        <TextBlock Text="Справка" Grid.Row="4" FontSize="14"/>
+        <Grid Grid.Row="5" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Программа вообще не оптимизирована и каждая папка грузится по отдельности, а не передается через фреймы, но раз работает, то можно и так пока что оставить. Сделала через NavigationView, почта, написание письма и т.д. - отдельные фреймы. Написать письмо - верхняя кнопка навигации. Основные папки - кнопки в навигации. Настройки - нижняя кнопка навигации. В настройках добавляете пользователя, выходите и меняете фон. Отвечать на сообщения - ПКМ по сообщению либо есть кнопка внутри самого письма." Grid.Column="0" TextWrapping="Wrap" />
+        </Grid>
+        <TextBlock Text="О программе" Grid.Row="6" FontSize="14" Margin="0,20,0,0"/>
+        <Grid Grid.Row="7" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Программа написана Скорогудаевой Софией, группа П50-3-18, права не зарегестрированы конечно, но кто будет красть прогу которая через раз работает, флаг им в руки. Версия 1.0, она уже может обновится, работа интересная была" Grid.Column="0" TextWrapping="Wrap" />
+        </Grid>
+        <NavigationViewItemSeparator Grid.Row="9"/>
+        <Button Content="Выйти со всех аккаунтов" Grid.Row="10" HorizontalAlignment="Center" Click="Button_Click"/>
+    </Grid>
+</Page>

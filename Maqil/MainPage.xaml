@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="Maqil.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Maqil"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="gridbg" Stretch="Fill" ImageSource="Background/background.jpg"/>
+        </Grid.Background>
+        <NavigationView x:Name="Navigation" PaneDisplayMode="Auto" Loaded="Navigation_Loaded" SelectionChanged="Navigation_SelectionChanged" >
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Edit" Content="Написать письмо" Tag="edit" x:Name="MailWrite" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="MailReply" Content="Входящие" Tag="mail" x:Name="MainIn" />
+                <NavigationViewItem Icon="MailForward" Content="Исходящие" Tag="mail" x:Name="MailOut" />
+                <NavigationViewItem Icon="Save" Content="Черновик" Tag="mail" x:Name="MailSaved" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="Delete" Content="Корзина"  Tag="mail" x:Name="MailDeleted" />
+            </NavigationView.MenuItems>
+
+            <NavigationView.PaneFooter>
+                <TextBlock x:Name="LoginPreviewTextBox" HorizontalAlignment="Center"/>
+            </NavigationView.PaneFooter>
+
+            <ScrollViewer Margin="50,50,50,50">
+                <Frame x:Name="ContentFrame" IsTabStop="True"/>
+            </ScrollViewer>
+        </NavigationView>
+
+    </Grid>
+</Page>
